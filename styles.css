@@ -1,0 +1,305 @@
+/* Основные стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Светло-серый фон */
+    color: #333; /* Темно-серый текст */
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Шрифт для заголовков */
+    color: #8b0000; /* Светлый бордовый */
+}
+
+a {
+    color: #8b0000; /* Светлый бордовый */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #333; /* Темно-серый */
+}
+
+/* Шапка */
+header {
+    background: linear-gradient(to right, #8b0000, #6b0000); /* Градиент бордового */
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 0 0 30px 30px;
+}
+
+header h1 {
+    font-size: 2.5rem; /* Уменьшим размер для мобильных */
+    margin: 0;
+    animation: fadeIn 2s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень для текста */
+}
+
+header p {
+    font-size: 1.2rem; /* Уменьшим размер для мобильных */
+    margin: 10px 0 0;
+    animation: fadeIn 3s ease-in-out;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Тень для текста */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Навигация */
+nav {
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 20px;
+    margin: -20px auto 0;
+    max-width: 90%;
+}
+
+nav a {
+    margin: 0 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem; /* Уменьшим размер для мобильных */
+}
+
+/* Основной контент */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin: 40px 0; /* Уменьшим отступы для мобильных */
+}
+
+/* Галерея (исправленная версия) */
+.gallery-container {
+    overflow: hidden; /* Скрываем всё, что выходит за пределы контейнера */
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.gallery {
+    display: flex;
+    width: max-content; /* Ширина галереи будет равна сумме ширины всех фотографий */
+    animation: scroll 30s linear infinite; /* Анимация прокрутки */
+}
+
+.gallery img {
+    width: 150px; /* Размер фотографий */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px; /* Расстояние между фотографиями */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Тень для объема */
+}
+
+/* Анимация прокрутки */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Сдвигаем галерею на половину её ширины */
+}
+
+/* Отзывы с эффектом поднятия */
+.reviews {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.review {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review:hover {
+    transform: translateY(-10px); /* Поднятие на 10px */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Увеличение тени */
+}
+
+/* Футер */
+footer {
+    background-color: #333; /* Темно-серый */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 30px 30px 0 0;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #8b0000; /* Светлый бордовый */
+}
+
+/* Кнопка "Наверх" */
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    font-size: 1.2rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav a {
+        margin: 0 5px;
+        font-size: 0.7rem;
+    }
+
+    .gallery img {
+        width: 100px;
+        height: 150px;
+    }
+}
+
+/* Стили для раздела "Обо мне" */
+.about {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-image {
+    width: 100%; /* Фотография будет адаптироваться под ширину контейнера */
+    max-width: 300px; /* Максимальная ширина фотографии */
+    height: auto; /* Сохраняет пропорции */
+    border-radius: 10px; /* Скругленные углы */
+    margin-bottom: 20px; /* Отступ снизу */
+    object-fit: cover; /* Обрезает изображение, чтобы оно заполнило контейнер */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Тень для объема */
+}
+
+/* Стили для раздела "Обучение" */
+.training {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 5px solid white; /* Белая рамка */
+}
+
+/* Стили для списков в разделе "Обучение" */
+.training ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0;
+}
+
+.training ul li {
+    margin-bottom: 10px; /* Отступ между пунктами списка */
+    position: relative;
+    padding-left: 20px; /* Отступ для кастомного маркера */
+}
+
+.training ul li::before {
+    content: "•"; /* Кастомный маркер */
+    color: #8b0000; /* Цвет маркера */
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+/* Стили для кнопки "Наверх" при наведении */
+#scrollToTop:hover {
+    background-color: #6b0000; /* Темный бордовый */
+    transform: scale(1.1); /* Увеличение кнопки */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.training {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.training-content {
+    width: 60%;
+    padding-right: 20px;
+}
+
+.training-photo {
+    width: 40%;
+    margin-left: 0;
+    padding: 20px;
+}
+
+.training-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 992px) {
+    .training {
+        flex-direction: column;
+    }
+
+    .training-content {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .training-photo {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .training-photo {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(20);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
