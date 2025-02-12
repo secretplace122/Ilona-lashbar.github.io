@@ -195,7 +195,15 @@ footer {
         height: 150px;
     }
 }
-
+.price {
+    text-align: start;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-style: normal;
+    color: #000000;
+}
 /* Стили для раздела "Обо мне" */
 .about {
     text-align: center;
@@ -376,9 +384,9 @@ footer {
 
 /* Стили для контейнера обучения */
 .training-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
+    display: flex; /* Включаем Flexbox */
+    align-items: flex-start; /* Выравниваем элементы по верхнему краю */
+    gap: 40px; /* Расстояние между текстом и фото */
     background-color: #fff;
     padding: 20px;
     border-radius: 20px;
@@ -387,7 +395,7 @@ footer {
 
 /* Стили для текстового блока */
 .training-quote {
-    flex: 2;
+    flex: 2; /* Текст занимает больше места */
 }
 
 .training-quote p {
@@ -422,8 +430,8 @@ footer {
 
 /* Стили для фото */
 .training-photo {
-    flex: 1; 
-    text-align: right;
+    flex: 1; /* Фото занимает меньше места */
+    text-align: right; /* Выравниваем фото по правому краю */
 }
 
 .training-img {
@@ -434,26 +442,30 @@ footer {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Адаптивность */
 @media (max-width: 768px) {
-    
-    .modal-content {
-        width: 100%; 
-        max-width: 100%; 
-        margin: 0; 
-        padding: 10px;
-        box-sizing: border-box;
-    }
-    .course-images {
-        display: flex;
+    .training-container {
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
     }
 
+    .training-photo {
+        text-align: center;
+        order: -1; /* Фото будет выше текста на мобильных устройствах */
+    }
+}
+@media (max-width: 768px) {
+    /* Стили для изображений в модальном окне на мобильных устройствах */
     .course-images img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0;
+        max-width: 100%; /* Ограничивает ширину изображения */
+        height: auto; /* Сохраняет пропорции */
+        display: block; /* Убирает лишние отступы */
+        margin: 0 auto; /* Центрирует изображение */
+    }
+
+    /* Стили для модального окна на мобильных устройствах */
+    .modal-content {
+        width: 95%; /* Ширина модального окна */
+        margin: 5% auto; /* Центрирование */
+        padding: 15px; /* Уменьшаем отступы */
     }
 }
