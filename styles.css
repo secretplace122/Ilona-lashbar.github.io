@@ -8,11 +8,14 @@ body {
     line-height: 1.6;
 }
 
-h1, h2, h3 {
+h2, h3 {
     font-family: 'Playfair Display', serif;
     color: #8b0000;
 }
-
+h1{
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+}
 a {
     color: #8b0000;
     text-decoration: none;
