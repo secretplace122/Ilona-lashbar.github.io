@@ -377,7 +377,6 @@ footer {
     background-color: #6b0000;
 }
 
-/* Стили для цитаты */
 .training-quote {
     text-align: start;
     margin: 20px 0;
@@ -385,20 +384,18 @@ footer {
     color: #000000;
 }
 
-/* Стили для контейнера обучения */
 .training-container {
-    display: flex; /* Включаем Flexbox */
-    align-items: flex-start; /* Выравниваем элементы по верхнему краю */
-    gap: 40px; /* Расстояние между текстом и фото */
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
     background-color: #fff;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Стили для текстового блока */
 .training-quote {
-    flex: 2; /* Текст занимает больше места */
+    flex: 2;
 }
 
 .training-quote p {
@@ -433,8 +430,8 @@ footer {
 
 /* Стили для фото */
 .training-photo {
-    flex: 1; /* Фото занимает меньше места */
-    text-align: right; /* Выравниваем фото по правому краю */
+    flex: 1;
+    text-align: right;
 }
 
 .training-img {
@@ -445,7 +442,6 @@ footer {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .training-container {
         flex-direction: column;
@@ -453,22 +449,19 @@ footer {
 
     .training-photo {
         text-align: center;
-        order: -1; /* Фото будет выше текста на мобильных устройствах */
+        order: -1;
     }
 }
 @media (max-width: 768px) {
-    /* Стили для изображений в модальном окне на мобильных устройствах */
     .course-images img {
-        max-width: 100%; /* Ограничивает ширину изображения */
+        max-width: 48%; /* Ограничивает ширину изображения */
         height: auto; /* Сохраняет пропорции */
         display: block; /* Убирает лишние отступы */
         margin: 0 auto; /* Центрирует изображение */
     }
-
-    /* Стили для модального окна на мобильных устройствах */
     .modal-content {
-        width: 95%; /* Ширина модального окна */
+        width: 90%; /* Ширина модального окна */
         margin: 5% auto; /* Центрирование */
-        padding: 15px; /* Уменьшаем отступы */
+        padding: 20px; /* Уменьшаем отступы */
     }
 }
